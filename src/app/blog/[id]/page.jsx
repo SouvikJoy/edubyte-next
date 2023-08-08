@@ -2,8 +2,12 @@ import React from "react";
 import styles from "./page.module.css";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-
-const base_url =  process.env.BASE_URL
+let base_url;
+if(process.env.MODE === "development") {
+  base_url = 'http://localhost:3000'
+} else{
+  base_url = 'http://edubyte.tech'
+}
 async function getData(id) {
   const res = await fetch(`${base_url}/api/posts/${id}`, {
     cache: "no-store",

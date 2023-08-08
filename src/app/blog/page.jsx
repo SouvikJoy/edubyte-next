@@ -2,8 +2,12 @@ import React from "react";
 import styles from "./page.module.css";
 import Link from "next/link";
 import Image from "next/image";
-
-const base_url =  process.env.BASE_URL
+let base_url;
+if(process.env.MODE === "development") {
+   base_url = 'http://localhost:3000'
+} else{
+  base_url = 'http://edubyte.tech'
+}
 export const metadata = {
   title: "Edubyte | Blog",
   description: "This is Blog Page",

@@ -6,11 +6,6 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 
-export const metadata = {
-  title: "Edubyte | Dashboard",
-  description: "This is Dashboard Page",
-};
-
 const Dashboard = () => {
 
   const session = useSession();
