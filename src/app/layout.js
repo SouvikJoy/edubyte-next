@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/context/ThemeContext";
 import AuthProvider from "@/components/AuthProvider/AuthProvider";
 
 const inter = Inter({ subsets: ["latin"] });
+const poppins = Poppins({ weight: "300", subsets: ["latin"] });
 
 export const metadata = {
   title: "Edubyte",
@@ -15,7 +16,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={poppins.className}>
         <ThemeProvider>
           <AuthProvider>
             <div className="container">
